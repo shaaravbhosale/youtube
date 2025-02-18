@@ -5,7 +5,14 @@ ImprovedTube.myColors = function () {
 	if (this.storage.theme === 'custom') {
 		var style = this.elements.my_colors || document.createElement('style'),
 			primary_color = this.storage.theme_primary_color,
-			text_color = this.storage.theme_text_color;
+			text_color = this.storage.theme_text_color,
+			header_color = this.storage.theme_header_color;
+		
+		if (header_color) {
+            header_color = 'rgb(' + header_color.join(',') + ')';
+        } else {
+            header_color = 'rgb(180, 180, 180)';
+        }
 
 		if (primary_color) {
 			primary_color = 'rgb(' + primary_color.join(',') + ')';
@@ -25,8 +32,10 @@ ImprovedTube.myColors = function () {
 		style.textContent = 'html, [dark] {' +
 					'--yt-swatch-textbox-bg:rgba(19,19,19,1)!important;' +
 					'--yt-swatch-icon-color:rgba(136,136,136,1)!important;' +
-					'--yt-spec-brand-background-primary:rgba(0,0,0, 0.1) !important;' +
-					'--yt-spec-brand-background-secondary:rgba(0,0,0, 0.1) !important;' +
+					'--yt-spec-brand-background-primary:' + header_color + '!important;' +
+    				'--yt-spec-brand-background-secondary:' + header_color + '!important;' +
+					'--yt-masthead-background:' + header_color + '!important;' +
+    				'--yt-header-background:' + header_color + '!important;' +
 					'--yt-spec-badge-chip-background:rgba(0, 0, 0, 0.05) !important;' +
 					'--yt-spec-verified-badge-background:rgba(0, 0, 0, 0.15) !important;' +
 					'--yt-spec-button-chip-background-hover:rgba(0, 0, 0, 0.10) !important;' +
@@ -68,6 +77,11 @@ ImprovedTube.myColors = function () {
 					'--ytd-searchbox-background:' + primary_color + '!important;' +
 					'--ytd-searchbox-legacy-button-color:' + 'var(--yt-spec-brand-background-primary)' + '!important;' +
 					'background-color: var(--yt-spec-base-background)!important;' +
+					'.ytd-masthead {background-color:' + header_color + '!important;}' +
+					'#masthead.ytd-app {background-color:' + header_color + '!important;}' +
+					'ytd-masthead {background:' + header_color + '!important;}' +
+					'#container.ytd-masthead {background-color:' + header_color + '!important;}' +
+					'.style-scope.ytd-masthead {background-color:' + header_color + '!important;}' +
 					'}';
 
 		this.elements.my_colors = style;
