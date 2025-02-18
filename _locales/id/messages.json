@@ -120,16 +120,16 @@
         "message": "Apakah Anda yakin ingin menyinkronkan pengaturan saat ini?"
     },
     "ARROWDOWN": {
-        "message": null
+        "message": "Panah Bawah"
     },
     "ARROWLEFT": {
-        "message": null
+        "message": "Panah Kiri"
     },
     "ARROWRIGHT": {
-        "message": null
+        "message": "Panah Kanan"
     },
     "ARROWUP": {
-        "message": null
+        "message": "Panah Atas"
     },
     "atHistory": {
         "message": "di 'Sejarah'"
