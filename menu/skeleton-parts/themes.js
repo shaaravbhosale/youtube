@@ -2,6 +2,15 @@
 >>> THEMES
 --------------------------------------------------------------*/
 
+satus.storage.onchanged((key, value) => {
+    if (key === 'theme_header_color') {
+        console.log('Header color changed to:', value);
+        if (typeof ImprovedTube !== 'undefined') {
+            ImprovedTube.myColors();
+        }
+    }
+});
+
 extension.skeleton.main.layers.section.themes = {
 	component: 'button',
 	variant: 'themes',
